@@ -1,4 +1,7 @@
-clearHilbert <- function(){
+library(ggplot2)
+library(iptools)
+
+Hilbert <- function(){
     xlist <<- {}
     ylist <<- {}
 }
@@ -29,7 +32,19 @@ drawHilbert <- function(xlist,ylist){
     ytemp <-unlist(ylist)
     points <- cbind(xlist,ylist)
     points <- as.data.frame(points)
-    c <- ggplot(points, aes(xt,yt))
+    c <- ggplot(points, aes(xtemp,ytemp))
     c + geom_path()
+}
+
+makeIPmap <- function () {
+    oct1 <- rep(0:255, each = 256)
+    oct2 <- rep(0:255, 256)
+    ipmap <- data.frame(oct1,oct2)
+    #print(head(dat))
+    ipmap2 <- paste(ipmap$oct1, ipmap$oct2, '0', '0', sep = '.')
+    ipmap <- cbind(ipmap,ipmap2)
+    nummap <- ip_to_numberic(ipmap2)
+    ipmap <- cbind(ipmap, nummap)
+    return(ipmap)
 }
     
