@@ -1,0 +1,51 @@
+---
+title: "Visualizations with Hilbert Curves"
+author: "Paul Gellerman"
+date: "May 20, 2016"
+output: 
+    ioslides_presentation:
+        css: style.css
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Space Filling Curves
+<div class="col2">
+<p><img src="./images/Hilbert_curve.svg" alt="Hilcurve" style="width: 275px;"/></p>
+<p><img src="./images/peano_curve.png" alt="peano" style="width: 275px;"/></p>
+  
+  
+  
+- Limit of a function that passes through every point in space.  
+- Peano, Hilbert, Z-curves, others.  
+- All have slightly different properties and generating algorithms, but the same basic principles apply.   
+</div>
+
+## Neat picture, who cares?
+<div class="col2">
+<p><img src="./images/rgb-hilbert.png" alt="rgb-hil" style="width: 250px;"/></p>
+<p><img src="./images/rgb-seq.png" alt="rgb-seq" style="width: 250px;"/></p>
+
+
+
+- Preserves locality of points from one dimension into two.  
+- Points that are close in one dimension are close in two.  
+- Can display very dense information in a compact form.  
+</div>
+
+## Recursion
+<div class="col2">
+<p><img src="./images/recursion.jpg" style="height: 225px;"/></p>
+<p><img src="./images/hogan_recursion.jpg" style="height: 225px;"/></p>
+</div>
+
+* Requires two main components:
+    + Terminating condition
+    + Code to execute
+* Think about deleting a folder with several sub-folders:
+    + What is the terminating condition?
+    + What is the code being executed?
+
